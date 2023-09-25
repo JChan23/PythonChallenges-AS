@@ -1,0 +1,20 @@
+import datetime
+
+year1 = int(input('Please enter the start year '))
+month1 = int(input('Please enter the start month '))
+day1 = int(input('Please enter the start day '))
+start = datetime.datetime(year1, month1, day1)
+print('')
+print('Start date:', start)
+print('')
+print('')
+year2 = int(input('Please enter the end year '))
+month2 = int(input('Please enter the end month '))
+day2 = int(input('Please enter the end day '))
+end = datetime.datetime(year2, month2, day2)
+print('')
+print('End date:', end)
+print('')
+print('')
+num = end - start
+print('Number of days that the project will take:', num.days, 'days')
