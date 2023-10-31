@@ -1,0 +1,77 @@
+#Use the turtle module to draw box plots. Ask user for minimum, maximum, upper quartile, lower quartile and median. Output a box plot.	
+import turtle
+
+minimum = int(input("Enter minimum/smallest value of data: "))
+maximum = int(input("Enter maximum/largest value of data: "))
+Q1 = int(input("Enter lower quartile: "))
+Q3 = int(input("Enter upper quartile: "))
+median = int(input('Enter median: '))
+
+turtle.screensize(1000, 1000, "white")
+turtle.speed(0)
+turtle.up()
+turtle.goto(-400, -300)
+turtle.down()
+
+#drawing axes
+turtle.forward(800)
+turtle.right(30)
+turtle.backward(10)
+turtle.forward(10)
+turtle.left(60)
+turtle.backward(10)
+turtle.forward(10)
+turtle.right(30)
+turtle.backward(800)
+turtle.left(90)
+turtle.forward(210)
+turtle.right(30)
+turtle.backward(10)
+turtle.forward(10)
+turtle.left(60)
+turtle.backward(10)
+turtle.forward(10)
+turtle.right(30)
+turtle.backward(210)
+turtle.up()
+turtle.goto(-400, -250)
+turtle.down()
+
+#drawing box
+turtle.color('blue')
+turtle.up()
+turtle.goto(-400+Q1, -250)
+turtle.down()
+turtle.forward(100)
+turtle.backward(100)
+turtle.goto(-400+Q3, -250)
+turtle.forward(100)
+turtle.left(90)
+turtle.forward(Q3-Q1)
+
+#median
+turtle.up()
+turtle.goto(-400+median, -250)
+turtle.down()
+turtle.right(90)
+turtle.forward(100)
+
+#lower bound
+turtle.up()
+turtle.goto(-400+minimum, -250)
+turtle.down()
+turtle.forward(100)
+turtle.backward(50)
+turtle.right(90)
+turtle.forward(Q1-minimum)
+
+#upper bound
+turtle.up()
+turtle.goto(-400+maximum, -250)
+turtle.down()
+turtle.left(90)
+turtle.forward(100)
+turtle.backward(50)
+turtle.left(90)
+turtle.forward(maximum-Q3)
+turtle.hideturtle() 
